@@ -2,20 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Charter', Georgia, serif;
+  line-height: 1.6;
+  background-color: #faf8f3;
+  color: #2a2a2a;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+.site-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
+}
+
+.site-subtitle {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+}
+
+/* Article styles */
+.article-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.article-date {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Markdown content */
+.prose {
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+}
+
+.prose h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-size: 1.25rem;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.prose blockquote {
+  font-style: italic;
+  color: #4a4a4a;
+  border-left: 3px solid #ddd;
+  padding-left: 1.5rem;
+  margin: 1.5em 0;
+}
+
+/* Tags */
+.tag {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
 }
