@@ -2,13 +2,13 @@
   "name": "blog-minimaliste",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "prisma generate && prisma db push && next build",
+  "start": "next start",
+  "lint": "next lint",
+  "postinstall": "prisma generate"
+},
   "dependencies": {
     "@prisma/client": "5.7.1",
     "@tailwindcss/typography": "^0.5.10",
