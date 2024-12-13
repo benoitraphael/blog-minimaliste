@@ -13,6 +13,8 @@ export default function NewPostPage() {
     e.preventDefault();
     
     try {
+      console.log("Tentative d'envoi de l'article:", { title, content, tags, date });
+      
       const response = await fetch('/api/posts', {
         method: 'POST',
         headers: {
@@ -25,13 +27,22 @@ export default function NewPostPage() {
           date: new Date(date).toISOString(),
         }),
       });
-
-      if (response.ok) {
-        router.push('/admin');
-        router.refresh();
+  
+      console.log("Statut de la réponse:", response.status);
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur lors de la création de l\'article');
       }
+  
+      const data = await response.json();
+      console.log("Article créé avec succès:", data);
+      
+      router.push('/admin');
+      router.refresh();
     } catch (error) {
-      console.error('Erreur:', error);
+      console.error('Erreur détaillée:', error);
+      alert('Erreur lors de la création de l\'article: ' + error.message);
     }
   };
 
