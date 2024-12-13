@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Layout */
+.content-wrapper {
+  width: 100%;
+  max-width: 42rem; /* ~672px - un peu plus étroit pour la lisibilité */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1.5rem;
+  background-color: #faf8f3; /* Utilise la même couleur que votre body */
+}
+
 /* Base styles */
 body {
   font-family: 'Charter', Georgia, serif;
