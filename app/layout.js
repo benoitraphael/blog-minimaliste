@@ -10,14 +10,15 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession();
-
   return (
     <html lang="fr">
       <body className="min-h-screen">
         <SessionProvider session={session}>
-          <main className="max-w-3xl mx-auto p-8">
-            {children}
-          </main>
+          <div className="w-full bg-white">
+            <main className="max-w-3xl mx-auto p-8 prose prose-lg">
+              {children}
+            </main>
+          </div>
         </SessionProvider>
       </body>
     </html>
