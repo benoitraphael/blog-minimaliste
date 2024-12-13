@@ -12,10 +12,10 @@ export default async function RootLayout({ children }) {
   const session = await getServerSession();
   return (
     <html lang="fr">
-      <body className="min-h-screen">
+      <body className="min-h-screen bg-white">
         <SessionProvider session={session}>
-          <div className="w-full bg-white">
-            <main className="max-w-3xl mx-auto p-8 prose prose-lg">
+          <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <main className="prose prose-lg py-8">
               {children}
             </main>
           </div>
